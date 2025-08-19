@@ -33,17 +33,13 @@ const Navbar = () => {
     const { signOut } = useAuthActions();
     const { setTheme } = useTheme()
 
-    console.log("User data", user);
-    console.log("User image", user?.image);
-
-
     return (
         <div className="p-4 border-b-2 border-border z-50">
             <div className='flex justify-between items-center'>
                 <div className="flex items-center gap-4 md:gap-6">
-                    <div className="w-12 h-8 flex items-center justify-center border border-border">
+                    <button onClick={() => redirect("/")} className="w-12 h-8 flex items-center justify-center border border-border">
                         Logo
-                    </div>
+                    </button>
                     <Search />
                 </div>
 
@@ -57,10 +53,10 @@ const Navbar = () => {
                         <DropdownMenuContent>
                             <DropdownMenuGroup>
                                 <DropdownMenuItem>
-                                    <span>Sell Tickets</span>
+                                    <button onClick={() => redirect("/seller")}>Sell Tickets</button>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem>
-                                    <span>My Tickets</span>
+                                    <button onClick={() => redirect("/tickets")}>My Tickets</button>
                                 </DropdownMenuItem>
                             </DropdownMenuGroup>
                             <DropdownMenuSeparator />
@@ -121,8 +117,8 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:block">
                     <div className="flex items-center gap-4">
-                        <Button>Sell Tickets</Button>
-                        <Button>My Tickets</Button>
+                        <Button onClick={() => redirect("/seller")}>Sell Tickets</Button>
+                        <Button onClick={() => redirect("/tickets")}>My Tickets</Button>
                         {user === undefined ? (
                             <Spinner size="default" />
                         ) : user === null ? (

@@ -1,3 +1,4 @@
+import { v } from "convex/values";
 import { query } from "./_generated/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
@@ -15,3 +16,10 @@ export const getUser = query({
         return user;
     },
 });
+
+export const getById = query({
+    args: { userId: v.id("users") },
+    handler: async (ctx, { userId }) => {
+        return await ctx.db.get(userId);
+    },
+})

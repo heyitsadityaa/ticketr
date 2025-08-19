@@ -178,24 +178,24 @@ const EventCard = ({ eventId }: { eventId: Id<"events"> }) => {
                             </div>
 
                         </div>
+                        {/* Price Tag */}
+                        <div className="flex flex-col items-end gap-2 ml-4">
+                            <span
+                                className={`px-4 py-1.5 font-semibold rounded-full ${isPastEvent
+                                    ? "bg-foreground/5 text-foreground/50"
+                                    : "bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300"
+                                    }`}
+                            >
+                                ${event.price.toFixed(2)}
+                            </span>
+                            {availability.purchasedCount >= availability.totalTickets && (
+                                <span className="px-4 py-1.5 bg-red-50 text-red-700 font-semibold rounded-full text-sm">
+                                    Sold Out
+                                </span>
+                            )}
+                        </div>
                     </div>
 
-                    {/* Price Tag */}
-                    <div className="flex flex-col items-end gap-2 ml-4">
-                        <span
-                            className={`px-4 py-1.5 font-semibold rounded-full ${isPastEvent
-                                ? "bg-foreground/5 text-foreground/50"
-                                : "bg-green-200 dark:bg-green-900 text-green-700 dark:text-green-300"
-                                }`}
-                        >
-                            ${event.price.toFixed(2)}
-                        </span>
-                        {availability.purchasedCount >= availability.totalTickets && (
-                            <span className="px-4 py-1.5 bg-red-50 text-red-700 font-semibold rounded-full text-sm">
-                                Sold Out
-                            </span>
-                        )}
-                    </div>
                 </div>
 
                 <div className="mt-4 space-y-3">

@@ -37,7 +37,8 @@ const EventList = () => {
                 <div className="px-4 py-2 rounded-lg border shadow-sm dark:shadow-foreground/20 border-foreground/10">
                     <div className="flex items-center gap-2 text-foreground/60">
                         <CalendarDays className="w-5 h-5" />
-                        <span className="font-medium">{upcomingEvents.length} Upcoming Events</span>
+                        <span className="font-medium sm:hidden">{upcomingEvents.length}</span>
+                        <span className="font-medium hidden sm:inline">{upcomingEvents.length} Upcoming Events</span>
                     </div>
                 </div>
             </div>

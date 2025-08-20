@@ -84,24 +84,24 @@ export default function SellerDashboard() {
                 {isReadyToAcceptPayments && (
                     <>
                         <div className="bg-background p-8 rounded-lg">
-                            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                            <h2 className="text-2xl font-semibold text-foreground/90 mb-6">
                                 Sell tickets for your events
                             </h2>
-                            <p className="text-gray-600 mb-8">
+                            <p className="text-foreground/60 mb-8">
                                 List your tickets for sale and manage your listings
                             </p>
-                            <div className="bg-background rounded-xl shadow-sm border border-gray-200 p-4">
+                            <div className="bg-background rounded-xl border-foreground/50 border-2 p-4">
                                 <div className="flex justify-center gap-4">
                                     <Link
                                         href="/seller/new-event"
-                                        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-lime-600 transition-colors"
+                                        className="flex items-center border-2 border-foreground/50 gap-2 bg-main text-black px-4 py-2 rounded-lg hover:bg-lime-600 transition-colors"
                                     >
                                         <Plus className="w-5 h-5" />
                                         Create Event
                                     </Link>
                                     <Link
                                         href="/seller/events"
-                                        className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                                        className="flex items-center gap-2 border-2 border-foreground/50 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
                                     >
                                         <CalendarDays className="w-5 h-5" />
                                         View My Events
@@ -110,7 +110,7 @@ export default function SellerDashboard() {
                             </div>
                         </div>
 
-                        <hr className="my-8" />
+                        {/* <hr className="my-8 border-2 border-foreground/50" /> */}
                     </>
                 )}
 
@@ -154,8 +154,8 @@ export default function SellerDashboard() {
                             {/* Status Cards */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {/* Account Status Card */}
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <h3 className="text-sm font-medium text-gray-500">
+                                <div className="border-2 border-foreground/50 rounded-lg p-4">
+                                    <h3 className="text-sm font-medium text-foreground/60">
                                         Account Status
                                     </h3>
                                     <div className="mt-2 flex items-center">
@@ -172,8 +172,8 @@ export default function SellerDashboard() {
                                 </div>
 
                                 {/* Payments Status Card */}
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <h3 className="text-sm font-medium text-gray-500">
+                                <div className="border-2 border-foreground/50 rounded-lg p-4">
+                                    <h3 className="text-sm font-medium text-foreground/60">
                                         Payment Capability
                                     </h3>
                                     <div className="mt-2 space-y-1">
@@ -225,7 +225,7 @@ export default function SellerDashboard() {
 
                             {/* Requirements Section */}
                             {accountStatus.requiresInformation && (
-                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4">
                                     <h3 className="text-sm font-medium text-yellow-800 mb-3">
                                         Required Information
                                     </h3>
@@ -257,7 +257,7 @@ export default function SellerDashboard() {
                                     )}
                                     {/* Only show Add Information button if there are requirements */}
                                     {!accountLinkCreatePending && (
-                                        <button
+                                        <Button
                                             onClick={async () => {
                                                 setAccountLinkCreatePending(true);
                                                 setError(false);
@@ -276,10 +276,10 @@ export default function SellerDashboard() {
                                                 }
                                                 setAccountLinkCreatePending(false);
                                             }}
-                                            className="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors"
+                                            className="mt-4 bg-yellow-600 border-2 border-yellow-800 px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors"
                                         >
                                             Complete Requirements
-                                        </button>
+                                        </Button>
                                     )}
                                 </div>
                             )}
@@ -287,20 +287,21 @@ export default function SellerDashboard() {
                             {/* Action Buttons */}
                             <div className="flex flex-wrap gap-3 mt-6">
                                 {accountStatus.isActive && (
-                                    <button
+                                    <Button
                                         onClick={handleManageAccount}
-                                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+                                        className="px-4 py-2 rounded-lg transition-colors flex items-center"
                                     >
                                         <Cog className="w-4 h-4 mr-2" />
                                         Seller Dashboard
-                                    </button>
+                                    </Button>
                                 )}
-                                <button
+                                <Button
                                     onClick={fetchAccountStatus}
-                                    className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                                    variant="neutral"
+                                    className="px-4 py-2 rounded-lg dark:bg-white dark:text-black transition-colors"
                                 >
                                     Refresh Status
-                                </button>
+                                </Button>
                             </div>
 
                             {error && (
@@ -314,12 +315,12 @@ export default function SellerDashboard() {
 
                     {/* Loading States */}
                     {accountCreatePending && (
-                        <div className="text-center py-4 text-gray-600">
+                        <div className="text-center py-4 text-foreground/60">
                             Creating your seller account...
                         </div>
                     )}
                     {accountLinkCreatePending && (
-                        <div className="text-center py-4 text-gray-600">
+                        <div className="text-center py-4 text-foreground/60">
                             Preparing account setup...
                         </div>
                     )}

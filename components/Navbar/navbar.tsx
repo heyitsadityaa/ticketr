@@ -27,6 +27,7 @@ import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import Search from './search';
+import Link from 'next/link';
 
 const Navbar = () => {
     const user = useQuery(api.users.getUser);
@@ -36,11 +37,13 @@ const Navbar = () => {
     return (
         <div className="p-4 border-b-2 border-border z-50">
             <div className='flex justify-between items-center'>
-                <div className="flex items-center gap-4 md:gap-6">
-                    <button onClick={() => redirect("/")} className="w-12 h-8 flex items-center justify-center border border-border">
-                        Logo
-                    </button>
-                    <Search />
+                <div className="flex items-center gap-2 md:gap-6">
+                    <Link href="/" className="flex items-center justify-center">
+                        <Image priority src="/logo.svg" width={70} height={70} alt="logo" className="md:w-[100px] md:h-[40px]" />
+                    </Link>
+                    <div className="flex-1 max-w-md">
+                        <Search />
+                    </div>
                 </div>
 
                 <div className="block md:hidden">

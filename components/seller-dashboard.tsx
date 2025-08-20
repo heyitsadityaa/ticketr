@@ -94,14 +94,14 @@ export default function SellerDashboard() {
                                 <div className="flex justify-center gap-4">
                                     <Link
                                         href="/seller/new-event"
-                                        className="flex items-center border-2 border-foreground gap-2 bg-main text-black px-4 py-2 rounded-lg hover:bg-lime-600 transition-colors"
+                                        className="flex items-center border-2 border-foreground/50 gap-2 bg-main text-black px-4 py-2 rounded-lg hover:bg-lime-600 transition-colors"
                                     >
                                         <Plus className="w-5 h-5" />
                                         Create Event
                                     </Link>
                                     <Link
                                         href="/seller/events"
-                                        className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                                        className="flex items-center gap-2 border-2 border-foreground/50 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
                                     >
                                         <CalendarDays className="w-5 h-5" />
                                         View My Events

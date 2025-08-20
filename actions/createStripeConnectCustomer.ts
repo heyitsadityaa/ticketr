@@ -12,8 +12,8 @@ if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
 
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 
-export async function createStripeConnectCustomer() {
-    const user = await fetchQuery(api.users.getUser);
+export async function createStripeConnectCustomer(userId: Id<"users">) {
+    const user = await convex.query(api.users.getById, { userId });
 
     if (!user) {
         throw new Error("User not found");

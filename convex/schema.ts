@@ -27,7 +27,7 @@ const schema = defineSchema({
         totalTickets: v.number(),
         userId: v.string(),
         imageStorageId: v.optional(v.id("_storage")),
-        is_canceled: v.optional(v.boolean())
+        is_cancelled: v.optional(v.boolean())
     }),
 
     tickets: defineTable({

@@ -140,13 +140,14 @@ const EventCard = ({ eventId }: { eventId: Id<"events"> }) => {
     }
 
     return (
-        <Card onClick={() => router.push(`/event/${eventId}`)} className={`rounded-lg cursor-pointer overflow-hidden hover:scale-[1.03] transition duration-200 relative ${isPastEvent ? "opacity-75 hover:opacity-100" : ""}`}>
+        <Card onClick={() => router.push(`/event/${eventId}`)} className={`rounded-lg pt-0 cursor-pointer overflow-hidden hover:scale-[1.03] transition duration-200 relative ${isPastEvent ? "opacity-75 hover:opacity-100" : ""}`}>
 
             {/* Event Image */}
-            <CardHeader>
+            <CardHeader className='pt-0 px-0'>
                 {imageUrl && (
                     <div className="relative w-full h-48">
-                        <Image src={imageUrl}
+                        <Image
+                            src={imageUrl}
                             alt={event.name}
                             fill
                             className='object-cover'

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import ReleaseTicket from './release-ticket'
+import { createStripeCheckoutSession } from '@/actions/createStripeCheckoutSession'
 
 const PurchaseTicket = ({ eventId }: { eventId: Id<"events"> }) => {
     const router = useRouter();
@@ -46,7 +47,24 @@ const PurchaseTicket = ({ eventId }: { eventId: Id<"events"> }) => {
 
     }, [offerExpiresAt, isExpired])
 
-    const handlePurchase = async () => { }
+    const handlePurchase = async () => {
+        if (!user) return;
+
+        try {
+            setIsLoading(true)
+            const { sessionUrl } = await createStripeCheckoutSession({
+                eventId, userId: user._id
+            })
+
+            if (sessionUrl) {
+                router.push(sessionUrl);
+            }
+        } catch (error) {
+
+        } finally {
+            setIsLoading(false)
+        }
+    }
 
     if (!user || !queuePosition || queuePosition.status !== "offered") {
         return null;

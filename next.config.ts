@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+module.exports = {
+  images: {
+    remotePatterns: [
+      new URL('https://hip-avocet-928.convex.cloud/api/**')]
 
-const nextConfig: NextConfig = {
+  },
   /* config options here */
 };
-
-export default nextConfig;

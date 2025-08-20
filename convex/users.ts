@@ -1,6 +1,39 @@
 import { v } from "convex/values";
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
+
+export const getUsersStripeConnectId = query({
+    args: { userId: v.string() },
+    handler: async (ctx, args) => {
+        const user = await ctx.db
+            .query("users")
+            .filter((q) => q.eq(q.field("_id"), args.userId))
+            .filter((q) => q.neq(q.field("stripeConnectId"), undefined))
+            .first();
+        return user?.stripeConnectId;
+    },
+})
+
+export const updateOrCreateUserStripeConnectId = mutation({
+    args: {
+        userId: v.id("users"),
+        stripeConnectId: v.string()
+    },
+    handler: async (ctx, args) => {
+        const user = await ctx.db.query("users")
+            .filter((q) => q.eq(q.field("_id"), args.userId))
+            .first()
+
+        if (!user) {
+            throw new Error("User not found");
+        }
+
+        await ctx.db.patch(args.userId, {
+            stripeConnectId: args.stripeConnectId
+        });
+        return { success: true };
+    }
+})
 
 export const getUser = query({
     args: {},

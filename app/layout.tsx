@@ -30,7 +30,6 @@ export default function RootLayout({
             <ConvexClientProvider>
               <Navbar />
               {children}
-
               <Toaster closeButton />
             </ConvexClientProvider>
           </ThemeProvider>

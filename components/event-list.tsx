@@ -34,7 +34,7 @@ const EventList = () => {
                     <h1 className='text-3xl font-bold text-foreground'>Upcoming Events</h1>
                     <p className="mt-2 text-foreground/60">Discover & book tickets for amazing events</p>
                 </div>
-                <div className="px-4 py-2 rounded-lg border border-foreground/10">
+                <div className="px-4 py-2 rounded-lg border shadow-sm dark:shadow-foreground/20 border-foreground/10">
                     <div className="flex items-center gap-2 text-foreground/60">
                         <CalendarDays className="w-5 h-5" />
                         <span className="font-medium">{upcomingEvents.length} Upcoming Events</span>

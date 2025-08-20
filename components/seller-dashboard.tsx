@@ -38,7 +38,11 @@ export default function SellerDashboard() {
     }, [stripeConnectId]);
 
     if (stripeConnectId === undefined) {
-        return <Spinner />;
+        return (
+            <div className="flex justify-center items-center min-h-content">
+                <Spinner size="lg" />
+            </div>
+        )
     }
 
     const handleManageAccount = async () => {

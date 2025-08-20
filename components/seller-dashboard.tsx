@@ -13,6 +13,7 @@ import Link from "next/link";
 import { AccountStatus, getStripeConnectAccountStatus } from "@/actions/getStripeAccountStatus";
 import { Spinner } from "./spinner";
 import { Button } from "./ui/button";
+import { Id } from "@/convex/_generated/dataModel";
 
 export default function SellerDashboard() {
     const [accountCreatePending, setAccountCreatePending] = useState(false);
@@ -129,7 +130,7 @@ export default function SellerDashboard() {
                                     setAccountCreatePending(true);
                                     setError(false);
                                     try {
-                                        await createStripeConnectCustomer();
+                                        await createStripeConnectCustomer(user?._id as Id<"users">);
                                         setAccountCreatePending(false);
                                     } catch (error) {
                                         console.error(

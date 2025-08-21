@@ -56,3 +56,13 @@ export const getById = query({
         return await ctx.db.get(userId);
     },
 })
+
+// export const getUserByToken = query({
+//     args: { tokenIdentifier: v.string() },
+//     handler: async (ctx, { tokenIdentifier }) => {
+//         return await ctx.db
+//             .query("users")
+//             .withIndex("by_token", (q) => q.eq("tokenIdentifier", tokenIdentifier))
+//             .unique();
+//     },
+// });

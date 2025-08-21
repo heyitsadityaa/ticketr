@@ -100,7 +100,7 @@ const EventCard = ({ eventId }: { eventId: Id<"events"> }) => {
 
         if (userTicket) {
             return (
-                <div className="mt-4 flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-100">
+                <div className="mt-4 flex items-center justify-between p-3 rounded-lg border-2 border-lime-500">
                     <div className="flex items-center">
                         <Check className="w-5 h-5 text-green-600 mr-2" />
                         <span className="text-green-700 font-medium">

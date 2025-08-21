@@ -14,9 +14,11 @@ const schema = defineSchema({
         phoneVerificationTime: v.optional(v.number()),
         isAnonymous: v.optional(v.boolean()),
         stripeConnectId: v.optional(v.string()),
+        // tokenIdentifier: v.string(),
     })
         .index("email", ["email"])
         .index("phone", ["phone"]),
+    // .index("by_token", ["tokenIdentifier"]),
 
     events: defineTable({
         name: v.string(),

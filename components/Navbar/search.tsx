@@ -27,7 +27,7 @@ export default function Search() {
                     className='lg:w-[400px] md:w-[200px] w-[150px]'
                     placeholder="Search for events..." />
             </form>
-            <Button type='submit' size='sm' variant="default">
+            <Button type='submit' onClick={handleSearch} size='sm' variant="default">
                 <span className="hidden md:block">Search</span>
                 <SearchIcon className='block md:hidden' />
             </Button>

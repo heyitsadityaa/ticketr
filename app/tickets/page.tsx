@@ -33,7 +33,7 @@ export default function MyTicketsPage() {
                             Manage and view all your tickets in one place
                         </p>
                     </div>
-                    <div className="px-4 py-2 rounded-lg shadow-sm border border-foreground/10 dark:shadow-foreground/10">
+                    <div className="px-4 py-2 rounded-lg shadow-sm border-2 border-foreground/10 dark:shadow-foreground/10">
                         <div className="flex items-center gap-2 text-foreground/60">
                             <Ticket className="w-5 h-5" />
                             <span className="font-medium">

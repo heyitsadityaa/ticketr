@@ -5,7 +5,7 @@ import {
 } from "@convex-dev/auth/nextjs/server";
 
 const isSignInPage = createRouteMatcher(["/auth"]);
-const isProtectedRoute = createRouteMatcher(["/seller", "/ticket"]);
+const isProtectedRoute = createRouteMatcher(["/seller", "/ticket", "/profile"]);
 
 export default convexAuthNextjsMiddleware(async (request, { convexAuth }) => {
     // If user is on sign-in page and already authenticated, redirect to home

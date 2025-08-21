@@ -39,7 +39,35 @@ const Navbar = () => {
             <div className='flex justify-between items-center'>
                 <div className="flex items-center gap-2 md:gap-6">
                     <Link href="/" className="flex items-center justify-center">
-                        <Image priority src="/logo.svg" width={70} height={70} alt="logo" className="md:w-[100px] md:h-[40px]" />
+                        {/* Logo for light theme - visible on larger screens */}
+                        <Image
+                            priority
+                            src="/logo-light.svg"
+                            width={70}
+                            height={70}
+                            alt="logo"
+                            className="hidden dark:hidden md:block light-theme md:w-[120px] md:h-[40px]"
+                        />
+
+                        {/* Logo for dark theme - visible on larger screens */}
+                        <Image
+                            priority
+                            src="/logo-dark.svg"
+                            width={70}
+                            height={70}
+                            alt="logo"
+                            className="hidden dark:md:block md:w-[120px] md:h-[40px]"
+                        />
+
+                        {/* Mobile logo - visible on smaller screens */}
+                        <Image
+                            priority
+                            src="/logo-mobile.svg"
+                            width={40}
+                            height={40}
+                            alt="logo"
+                            className="md:hidden"
+                        />
                     </Link>
                     <div className="flex-1 max-w-md">
                         <Search />
@@ -80,7 +108,7 @@ const Navbar = () => {
                                         </DropdownMenuSubTrigger>
                                         <DropdownMenuPortal>
                                             <DropdownMenuSubContent>
-                                                <DropdownMenuItem>
+                                                <DropdownMenuItem onClick={() => redirect("/profile")}>
                                                     <User />
                                                     <span>Profile</span>
                                                 </DropdownMenuItem>
@@ -139,7 +167,7 @@ const Navbar = () => {
 
                                 <DropdownMenuContent>
                                     <DropdownMenuGroup>
-                                        <DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => redirect("/profile")}>
                                             <User />
                                             <span>Profile</span>
                                         </DropdownMenuItem>

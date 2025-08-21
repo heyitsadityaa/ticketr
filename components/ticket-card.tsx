@@ -22,11 +22,11 @@ export default function TicketCard({ ticketId }: { ticketId: Id<"tickets"> }) {
 
     const statusColors = {
         valid: isPastEvent
-            ? "bg-gray-50 text-foreground/60 border-gray-200"
-            : "bg-green-50 text-green-700 border-green-100",
-        used: "bg-gray-50 text-foreground/60 border-gray-200",
-        refunded: "bg-red-50 text-red-700 border-red-100",
-        cancelled: "bg-red-50 text-red-700 border-red-100",
+            ? "bg-gray-200 text-foreground/60 border-gray-300"
+            : "bg-green-200 text-green-700 border-green-300",
+        used: "bg-gray-200 text-foreground/60 border-gray-300",
+        refunded: "bg-red-200 text-red-700 border-red-300",
+        cancelled: "bg-red-200 text-red-700 border-red-300",
     };
 
     const statusText = {
@@ -39,7 +39,7 @@ export default function TicketCard({ ticketId }: { ticketId: Id<"tickets"> }) {
     return (
         <Link
             href={`/tickets/${ticketId}`}
-            className={`block rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border ${ticket.event.is_cancelled ? "border-red-500" : "border-main"
+            className={`block rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border-2 ${ticket.event.is_cancelled ? "border-red-500" : "border-main"
                 } overflow-hidden ${isPastEvent ? "opacity-75 hover:opacity-100" : ""}`}
         >
             <div className="p-5">
@@ -61,7 +61,7 @@ export default function TicketCard({ ticketId }: { ticketId: Id<"tickets"> }) {
                     <div className="flex flex-col items-end gap-2">
                         <span
                             className={`px-3 py-1 rounded-full text-sm font-medium ${ticket.event.is_cancelled
-                                ? "bg-red-50 text-red-700 border-red-100"
+                                ? "bg-red-200 text-red-700 border-red-300"
                                 : statusColors[ticket.status]
                                 }`}
                         >

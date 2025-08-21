@@ -2,9 +2,8 @@
 
 import SignInWithGitHub from '@/components/signIn-with-github'
 import SignInWithGoogle from '@/components/signIn-with-google'
-import SignOutButton from '@/components/signout'
 import { Spinner } from '@/components/spinner'
-import { Authenticated, AuthLoading, Unauthenticated } from 'convex/react'
+import { AuthLoading, Unauthenticated } from 'convex/react'
 import React from 'react'
 
 const Auth = () => {

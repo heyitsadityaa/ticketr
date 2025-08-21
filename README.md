@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ticketr - Real-time Event Ticketing Platform
 
-## Getting Started
+A modern, real-time event ticketing platform built with Next.js 15, Convex, and Stripe Connect. Features a sophisticated queue system, real-time updates, and secure payment processing with a beautiful Neobutralism-inspired design.
 
-First, run the development server:
+## ✨ What is Ticketr?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ticketr revolutionizes event ticketing by combining real-time technology with smart queue management. Whether you're an event organizer looking to sell tickets seamlessly or an attendee trying to secure spots for popular events, Ticketr provides a fair, transparent, and engaging experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### For Event Attendees
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎫 **Real-time ticket availability** - See live updates as tickets become available
+- ⚡ **Smart queuing system** - Fair queue with live position updates  
+- 🕒 **Time-limited offers** - Secure your spot with time-bound ticket offers
+- 📱 **Mobile-first experience** - Seamless ticket management on any device
+- 🔒 **Secure payments** - Protected transactions with Stripe
+- 📲 **Digital tickets** - QR code tickets for easy event entry
+- 💸 **Automatic refunds** - Instant refunds for cancelled events
 
-## Learn More
+### For Event Organizers
 
-To learn more about Next.js, take a look at the following resources:
+- 💰 **Direct payouts** - Get paid directly via Stripe Connect
+- 📊 **Real-time analytics** - Monitor sales and queue status live
+- 🎯 **Automated management** - Smart queue and ticket recycling
+- 📈 **Event insights** - Detailed analytics and tracking
+- 🎟️ **Flexible ticketing** - Customizable limits and pricing
+- ❌ **Easy cancellations** - One-click event cancellation with auto-refunds
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Technical Highlights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Real-time Everything**: Live updates using Convex's real-time database
+- **Smart Authentication**: Seamless OAuth with Google & GitHub via Convex Auth
+- **Secure Payments**: Stripe Connect for direct organizer payouts
+- **Modern Architecture**: Built with Next.js 15 and React 19
+- **Fraud Prevention**: Built-in rate limiting and automated security
+- **Queue Intelligence**: Sophisticated queue management with position tracking
 
-## Deploy on Vercel
+## 🎨 Design Philosophy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ticketr embraces **Neobutralism** - a modern take on brutalist design principles that emphasizes:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Bold, confident interfaces** with strong visual hierarchy
+- **Functional beauty** where every element serves a purpose  
+- **Accessible design** that works for everyone
+- **Smooth micro-interactions** that provide delightful feedback
+- **Responsive layouts** optimized for all screen sizes
+
+## 🏗️ Architecture
+
+Built on a modern, scalable stack:
+
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Backend**: Convex (real-time database & backend)
+- **Authentication**: Convex Auth with Google & GitHub OAuth
+- **Payments**: Stripe Connect for direct payouts to organizers
+- **UI/UX**: Custom Neobutralism-inspired design system
+- **State Management**: Convex real-time subscriptions
+- **Deployment**: Vercel
+
+## 🎪 How It Works
+
+### The Queue System
+
+When tickets sell out, attendees join a smart queue that:
+
+- Tracks your position in real-time
+- Automatically offers tickets when available
+- Provides time-limited purchase opportunities
+- Prevents queue jumping and manipulation
+
+### Payment Flow
+
+- Organizers connect their Stripe accounts for direct payouts
+- Secure checkout process with automatic receipts
+- Instant refunds for cancelled events
+- Transparent fee structure
+
+### Real-time Updates
+
+Everything happens live - queue positions, ticket availability, sales analytics, and more update instantly across all connected clients.
+
+## 📖 Documentation
+
+- **[Getting Started](./docs/GETTING_STARTED.md)** - Setup and installation guide
+- **[Development Guide](./docs/DEVELOPMENT.md)** - Contributing and development workflow
+- **[API Reference](./convex/README.md)** - Backend functions documentation
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Development Guide](./docs/DEVELOPMENT.md) for setup instructions and contribution guidelines.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+
+## 🙏 Acknowledgments
+
+- [Convex](https://convex.dev/) for the amazing real-time backend platform
+- [Stripe](https://stripe.com/) for reliable payment processing
+- [Vercel](https://vercel.com/) for seamless hosting and deployment

@@ -1,11 +1,8 @@
 "use client"
 
-import { getConvexClient } from "@/lib/convex";
 import { api } from "@/convex/_generated/api";
 import { redirect } from "next/navigation";
 import Ticket from "@/components/ticket";
-import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
-import { fetchQuery } from "convex/nextjs";
 import { useQuery } from "convex/react";
 import { Spinner } from "@/components/spinner";
 import { useMemo } from "react";

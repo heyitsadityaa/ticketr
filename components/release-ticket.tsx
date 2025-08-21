@@ -5,7 +5,6 @@ import { Id } from "@/convex/_generated/dataModel";
 import { useMutation } from "convex/react";
 import { useState } from "react";
 import { XCircle } from "lucide-react";
-import { Button } from "./ui/button";
 
 const ReleaseTicket = ({ eventId, waitingListId }: { eventId: Id<"events">; waitingListId: Id<"waitingList"> }) => {
     const [isReleasing, setIsReleasing] = useState(false);

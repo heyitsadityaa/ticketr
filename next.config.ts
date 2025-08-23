@@ -11,6 +11,16 @@ module.exports = {
         hostname: 'avatars.githubusercontent.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'moonlit-gnu-933.convex.cloud',
+        pathname: '/api/**',
+      },
     ],
   },
   /* config options here */

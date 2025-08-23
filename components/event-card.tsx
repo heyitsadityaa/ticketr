@@ -39,8 +39,8 @@ const EventCard = ({ eventId }: { eventId: Id<"events"> }) => {
             return (
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
                     <div className="flex items-center">
-                        <Ticket className="w-5 h-5 text-gray-400 mr-2" />
-                        <span className="text-gray-600">Event is sold out</span>
+                        <Ticket className="w-5 h-5 text-foreground/40 mr-2" />
+                        <span className="text-foreground/60">Event is sold out</span>
                     </div>
                 </div>
             );
@@ -125,7 +125,7 @@ const EventCard = ({ eventId }: { eventId: Id<"events"> }) => {
                     )}
                     {renderQueuePosition()}
                     {queuePosition.status === "expired" && (
-                        <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                        <div className="p-3 bg-red-200 rounded-lg border border-red-300">
                             <span className="text-red-700 font-medium flex items-center">
                                 <XCircle className="w-5 h-5 mr-2" />
                                 Offer expired

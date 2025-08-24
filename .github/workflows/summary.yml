@@ -1,0 +1,31 @@
+name: Summarize new issues
+
+on:
+  issues:
+    types: [opened]  # Triggers when new issues are created
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write    # Can comment on issues
+      models: read     # For future AI integration
+      contents: read   # Can read repository content
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Gets repository code
+
+      - name: Create issue summary
+        id: summary
+        run: |
+          # Creates a simple automated summary
+          SUMMARY="**Issue Summary:** This issue has been automatically categorized and will be reviewed by the maintainers. Title: ${{ github.event.issue.title }}"
+          echo "summary=${SUMMARY}" >> $GITHUB_OUTPUT  # Sets output for next step
+
+      - name: Comment with summary
+        run: |
+          gh issue comment $ISSUE_NUMBER --body "${{ steps.summary.outputs.summary }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Built-in GitHub token
+          ISSUE_NUMBER: ${{ github.event.issue.number }}

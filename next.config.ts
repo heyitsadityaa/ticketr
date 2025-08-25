@@ -3,7 +3,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'hip-avocet-928.convex.cloud',
+        hostname: new URL(process.env.NEXT_PUBLIC_CONVEX_URL!).hostname,
         pathname: '/api/**',
       },
       {
@@ -15,12 +15,7 @@ module.exports = {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'moonlit-gnu-933.convex.cloud',
-        pathname: '/api/**',
-      },
+      }
     ],
   },
   /* config options here */

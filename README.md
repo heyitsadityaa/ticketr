@@ -1,12 +1,35 @@
+<p align="center">
+    <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/548375ef-25a4-42d5-888a-17e38828f20a" />
+</p>
+
 # Ticketr - Real-time Event Ticketing Platform
 
 A modern, real-time event ticketing platform built with Next.js 15, Convex, and Stripe Connect. Features a sophisticated queue system, real-time updates, and secure payment processing with a beautiful Neobutralism-inspired design.
+
+## 🖥️ Project Demo
+
+### Attendees
+
+Check out the attendees experience in action:
+
+[Watch the Attendees Demo](https://github.com/user-attachments/assets/8d33b384-66d9-4d46-bf04-80f4456d4a9d)
+> _Click to watch a walkthrough of ticket browsing, queueing, and purchase flow._
+
+### Organizers
+
+See how event organizers manage events and sales:
+
+[Watch the Organizer Demo](https://github.com/user-attachments/assets/ba50d604-f192-450c-b71e-47178e2b066a)
+
+> _Click to watch event creation, analytics, and payout management._
+
+
 
 ## ✨ What is Ticketr?
 
 Ticketr revolutionizes event ticketing by combining real-time technology with smart queue management. Whether you're an event organizer looking to sell tickets seamlessly or an attendee trying to secure spots for popular events, Ticketr provides a fair, transparent, and engaging experience.
 
-## 🎯 Key Features
+## Key Features
 
 ### For Event Attendees
 
@@ -93,9 +116,3 @@ We welcome contributions! Please see our [Development Guide](./docs/DEVELOPMENT.
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
-
-## 🙏 Acknowledgments
-
-- [Convex](https://convex.dev/) for the amazing real-time backend platform
-- [Stripe](https://stripe.com/) for reliable payment processing
-- [Vercel](https://vercel.com/) for seamless hosting and deployment

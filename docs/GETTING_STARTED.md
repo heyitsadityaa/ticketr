@@ -96,7 +96,17 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 ### Setting up Authentication
 
 You need at least one OAuth provider. Here's how to set up both:
+#### Example: Starting Stripe Webhook Forwarding
 
+For local development:
+```bash
+stripe listen --forward-to http://localhost:3000/api/webhooks/stripe
+```
+
+For your deployed Vercel app:
+```bash
+stripe listen --forward-to https://ticketr-gilt.vercel.app/api/webhooks/stripe
+```
 #### Google OAuth
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)

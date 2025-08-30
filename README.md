@@ -23,12 +23,6 @@ See how event organizers manage events and sales:
 
 > _Click to watch event creation, analytics, and payout management._
 
-
-
-## ✨ What is Ticketr?
-
-Ticketr revolutionizes event ticketing by combining real-time technology with smart queue management. Whether you're an event organizer looking to sell tickets seamlessly or an attendee trying to secure spots for popular events, Ticketr provides a fair, transparent, and engaging experience.
-
 ## Key Features
 
 ### For Event Attendees
@@ -112,7 +106,3 @@ Everything happens live - queue positions, ticket availability, sales analytics,
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Development Guide](./docs/DEVELOPMENT.md) for setup instructions and contribution guidelines.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
